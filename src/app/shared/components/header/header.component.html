@@ -1,0 +1,17 @@
+<header>
+    <div class="menu-items">
+      <a class="menu-item"> Dashboard </a>
+      <a class="menu-item"> Reports </a>
+      <a class="menu-item"> Standalone </a>
+    </div>
+    <div class="theme-switcher" data-tooltip="Theme mode">
+      <label class="switch">
+        <input
+          type="checkbox"
+          [checked]="isLightTheme"
+          (change)="onThemeChange()"
+        >
+        <span class="slider"></span>
+      </label> 
+    </div>
+</header>
