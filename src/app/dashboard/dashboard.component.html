@@ -1,1 +1,12 @@
-<p>dashboard works!</p>
+<div style="display: block; width: 100%; max-width: 700px; margin: auto;">
+    <div *ngIf="barChartData">
+        <canvas baseChart [data]="barChartData" [type]="'bar'" [options]="barChartOptions">
+        </canvas>
+
+    </div>
+
+    <div *ngIf="pieChartData">
+        <canvas baseChart [data]="pieChartData" [type]="'pie'" [options]="pieChartOptions">
+        </canvas>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+[
+    {
+        "id": "001",
+        "name": "John",
+        "designation": "Tester",
+        "rating": "4",
+        "feedback": "Excellent"
+    },
+    {
+        "id": "002",
+        "name": "Rekha",
+        "designation": "Junior Developer",
+        "rating": "3",
+        "feedback": "Good"
+    },
+    {
+        "id": "003",
+        "name": "Sam",
+        "designation": "Tech Lead",
+        "rating": "5",
+        "feedback": "Excellent"
+    },
+    {
+        "id": "001",
+        "name": "Jess",
+        "designation": "Devops",
+        "rating": "4",
+        "feedback": "Exceptional"
+    }
+]

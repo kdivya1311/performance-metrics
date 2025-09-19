@@ -1,1 +1,70 @@
-<p>reports works!</p>
+<div class="reports">
+    <div class="add-employee-section">
+        <form [formGroup]="employeeForm!">
+            <div>
+                <input placeholder="ID" formControlName="id" />
+                <p *ngIf="employeeForm?.get('id')?.touched && employeeForm?.get('id')?.errors">
+                    ID Required
+                </p>
+            </div>
+            <div>
+                <input placeholder="Name" formControlName="name" />
+                <p *ngIf="employeeForm?.get('name')?.touched && employeeForm?.get('name')?.errors">
+                    Name Required
+                </p>
+            </div>
+            <div>
+                <select formControlName="designation">
+                    <option selected="true" value="">Select Designation</option>
+                    <option value="1">QA</option>
+                    <option value="2">Developer</option>
+                    <option value="3">Manager</option>
+                </select>
+                <p *ngIf="employeeForm?.get('designation')?.touched && employeeForm?.get('designation')?.errors">
+                    Designation Required
+                </p>
+            </div>
+            <div>
+                <select formControlName="rating">
+                    <option selected="true" value="">Select Rating</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <p *ngIf="employeeForm?.get('rating')?.touched && employeeForm?.get('rating')?.errors">
+                    Rating Required
+                </p>
+            </div>
+            <div>
+                <input placeholder="Feedback" formControlName="feedback" />
+                <p *ngIf="employeeForm?.get('feedback')?.touched && employeeForm?.get('feedback')?.errors">
+                    Feedback Required
+                </p>
+            </div>
+        </form>
+        <button [disabled]="!employeeForm?.valid" (click)="addEmployee()">Add</button>
+    </div>
+    <div class="search-container">
+        <input type="text" placeholder="Search by name..." [(ngModel)]="searchTerm" (input)="onSearchChange()" />
+    </div>
+    <div class="card-container">
+        <div class="card" *ngFor="let emp of filteredEmployees">
+            <img class="card-img-top" src="assets/avatar.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">{{emp.name}}</h5>
+                <h6 class="card-title">{{emp.designation}}</h6>
+                <p class="card-text">Feedback : {{emp.feedback}}</p>
+                <p class="star-rating">Ratings
+                    <span *ngFor="let star of stars; let i = index" [class.filled]="i < emp.rating">
+                        &#9733;
+                    </span>
+                </p>
+            </div>
+        </div>
+        <div *ngIf="!filteredEmployees || filteredEmployees.length === 0">
+            <p>No Records Found!</p>
+        </div>
+    </div>
+</div>
