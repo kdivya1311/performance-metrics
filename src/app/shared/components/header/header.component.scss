@@ -12,11 +12,18 @@ header {
     gap: 15px;
 
     .menu-item {
+        text-decoration: none;
       display: inline-block;
       font-size: 20px;
       color: var(--header-menu-item-color);
       padding: 0px 15px;
       cursor: pointer;
+      &.active {
+        padding-bottom: 15px;
+        color: red;
+        font-weight: bold;
+        border-bottom: 2px solid red;
+        }
     }
   }
 
@@ -83,4 +90,5 @@ header {
     background: #eee;
 
     }
+
 }

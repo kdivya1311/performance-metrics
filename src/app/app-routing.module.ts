@@ -10,6 +10,14 @@ const routes: Routes = [
   {
     path: 'dashboard',
     loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
+  },
+  { 
+    path: 'reports', 
+    loadChildren: () => import('./reports/reports.module').then(m => m.ReportsModule) 
+  },
+  {
+    path: 'standalone',
+    loadComponent: () => import('./standalone/standalone.component').then(m => m.StandaloneComponent)
   }
   
 ];
